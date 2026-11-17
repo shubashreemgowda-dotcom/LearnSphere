@@ -1,0 +1,899 @@
+.explore-play {
+  --ep-ink: #302653;
+  --ep-muted: #77718d;
+  --ep-purple: #7955dc;
+  --ep-radius: 24px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 0 50px;
+  color: var(--ep-ink);
+  font-family: inherit;
+}
+
+.explore-play * {
+  box-sizing: border-box;
+}
+
+.explore-play button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* WELCOME ADVENTURE */
+
+.explore-welcome {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 310px;
+  padding: 38px 52px;
+  overflow: hidden;
+  border-radius: 32px;
+  background: linear-gradient(115deg, #eee7ff 0%, #e9edff 48%, #dff8f5 100%);
+  box-shadow: 0 14px 35px rgba(91, 73, 160, 0.09);
+}
+
+.welcome-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 570px;
+}
+
+.explore-eyebrow,
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #7955dc;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 1.5px;
+}
+
+.explore-welcome h1 {
+  margin: 17px 0 12px;
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 900;
+  letter-spacing: -1.8px;
+  color: #302653;
+}
+
+.explore-welcome h1 span {
+  display: inline-block;
+  animation: ep-wave 2.5s ease-in-out infinite;
+}
+
+.explore-welcome p {
+  max-width: 480px;
+  margin: 0;
+  color: #716a8b;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.explore-tags {
+  display: flex;
+  gap: 9px;
+  margin: 19px 0;
+  flex-wrap: wrap;
+}
+
+.explore-tags span {
+  padding: 8px 14px;
+  border: 1px solid rgba(121, 85, 220, 0.12);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #6947c6;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.explore-primary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border: 0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #8060e8, #6846cc);
+  color: white;
+  font-weight: 800;
+  box-shadow: 0 8px 18px rgba(104, 70, 204, 0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.explore-primary-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 23px rgba(104, 70, 204, 0.3);
+}
+
+/* MASCOT ART */
+
+.welcome-art {
+  position: relative;
+  display: grid;
+  width: 310px;
+  min-width: 230px;
+  height: 255px;
+  place-items: center;
+}
+
+.explorer-mascot {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: 165px;
+  height: 165px;
+  place-items: center;
+  border: 8px solid rgba(255, 255, 255, 0.7);
+  border-radius: 48px;
+  background: linear-gradient(145deg, #fff, #dcd1ff);
+  box-shadow:
+    0 20px 35px rgba(89, 62, 160, 0.2),
+    inset 0 -9px 15px rgba(124, 94, 218, 0.12);
+  font-size: 92px;
+  transform: rotate(-7deg);
+  animation: ep-float 3.5s ease-in-out infinite;
+}
+
+.welcome-orbit {
+  position: absolute;
+  width: 225px;
+  height: 225px;
+  border: 2px dashed rgba(121, 85, 220, 0.3);
+  border-radius: 50%;
+}
+
+.orbit-two {
+  width: 270px;
+  height: 180px;
+  transform: rotate(-35deg);
+}
+
+.floating-star {
+  position: absolute;
+  z-index: 3;
+  font-size: 28px;
+  animation: ep-float 2.7s ease-in-out infinite;
+}
+
+.star-one {
+  top: 12px;
+  left: 40px;
+}
+
+.star-two {
+  top: 40px;
+  right: 15px;
+  animation-delay: 0.6s;
+}
+
+.star-three {
+  bottom: 30px;
+  left: 35px;
+  animation-delay: 1s;
+}
+
+.mascot-caption {
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 15px;
+  border-radius: 30px;
+  background: white;
+  color: #7651d4;
+  font-size: 12px;
+  font-weight: 850;
+  box-shadow: 0 8px 18px rgba(65, 48, 120, 0.12);
+}
+
+/* PROGRESS CARDS */
+
+.explore-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+  margin: 25px 0 38px;
+}
+
+.explore-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-height: 92px;
+  padding: 17px 20px;
+  border: 1px solid #f0edf8;
+  border-radius: 21px;
+  background: white;
+  box-shadow: 0 8px 22px rgba(54, 43, 90, 0.045);
+}
+
+.stat-icon {
+  display: grid;
+  width: 49px;
+  height: 49px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 16px;
+}
+
+.stat-purple {
+  background: #eee7ff;
+  color: #7955dc;
+}
+
+.stat-yellow {
+  background: #fff4d6;
+  color: #e4a52e;
+}
+
+.stat-green {
+  background: #e0f8eb;
+  color: #35a873;
+}
+
+.explore-stat-card strong,
+.explore-stat-card span {
+  display: block;
+}
+
+.explore-stat-card strong {
+  font-size: 24px;
+  font-weight: 900;
+  color: #302653;
+}
+
+.explore-stat-card span {
+  margin-top: 3px;
+  color: #858098;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+/* COMMON SECTIONS */
+
+.explore-section {
+  margin-top: 42px;
+}
+
+.explore-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 21px;
+}
+
+.explore-section-heading h2 {
+  margin: 8px 0 5px;
+  color: #302653;
+  font-size: clamp(21px, 3vw, 27px);
+  font-weight: 900;
+  letter-spacing: -0.8px;
+}
+
+.explore-section-heading p {
+  margin: 0;
+  color: #858098;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.heading-decoration {
+  font-size: 38px;
+}
+
+/* SUBJECT WORLDS */
+
+.subject-world-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.subject-world-card {
+  position: relative;
+  min-width: 0;
+  padding: 21px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 24px;
+  transition: box-shadow 0.25s;
+}
+
+.subject-world-card:hover {
+  box-shadow: 0 15px 28px rgba(61, 49, 103, 0.12);
+}
+
+.physics {
+  background: linear-gradient(145deg, #eee7ff, #f8f4ff);
+  border-color: #e5d9ff;
+}
+
+.chemistry {
+  background: linear-gradient(145deg, #fff0e3, #fff9f0);
+  border-color: #ffe5ce;
+}
+
+.biology {
+  background: linear-gradient(145deg, #e2f8eb, #f2fff6);
+  border-color: #d4f1df;
+}
+
+.math {
+  background: linear-gradient(145deg, #e1f1ff, #f2f9ff);
+  border-color: #d6eaff;
+}
+
+.subject-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subject-emoji {
+  display: grid;
+  width: 57px;
+  height: 57px;
+  place-items: center;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 7px 15px rgba(60, 50, 100, 0.08);
+  font-size: 30px;
+}
+
+.world-number {
+  color: #89829d;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 1px;
+}
+
+.subject-world-card h3 {
+  margin: 17px 0 6px;
+  color: #302653;
+  font-size: 19px;
+  font-weight: 900;
+}
+
+.subject-world-card > p {
+  min-height: 37px;
+  margin: 0;
+  color: #77718d;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.subject-progress {
+  margin-top: 19px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  margin-bottom: 8px;
+  color: #77718d;
+  font-size: 10px;
+}
+
+.progress-label strong {
+  color: #51466f;
+}
+
+.progress-track {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #8d70e8, #b79bf9);
+}
+
+.chemistry .progress-fill {
+  background: linear-gradient(90deg, #eea24f, #ffc77d);
+}
+
+.biology .progress-fill {
+  background: linear-gradient(90deg, #4ebd83, #85dfac);
+}
+
+.math .progress-fill {
+  background: linear-gradient(90deg, #5b9ee7, #91c5ff);
+}
+
+.world-explore-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 17px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #6f50cb;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+/* ADVENTURE MISSIONS */
+
+.adventure-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.adventure-card {
+  overflow: hidden;
+  border: 1px solid #eeeaf7;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 8px 22px rgba(54, 43, 90, 0.05);
+  transition: box-shadow 0.25s;
+}
+
+.adventure-card:hover {
+  box-shadow: 0 14px 28px rgba(54, 43, 90, 0.1);
+}
+
+.adventure-illustration {
+  position: relative;
+  display: grid;
+  min-height: 135px;
+  place-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #eee5ff, #dcd5ff);
+}
+
+.adventure-illustration > span {
+  position: relative;
+  z-index: 2;
+  font-size: 70px;
+  filter: drop-shadow(0 9px 8px rgba(68, 47, 120, 0.15));
+  transition: transform 0.3s;
+}
+
+.adventure-card:hover .adventure-illustration > span {
+  transform: translateY(-7px) rotate(-5deg) scale(1.08);
+}
+
+.adventure-sparkle {
+  position: absolute;
+  top: 15px;
+  right: 23px;
+  font-size: 24px;
+}
+
+.adventure-green .adventure-illustration {
+  background: linear-gradient(135deg, #dcf7e8, #c4f0d8);
+}
+
+.adventure-orange .adventure-illustration {
+  background: linear-gradient(135deg, #fff0d9, #ffdfb4);
+}
+
+.adventure-content {
+  padding: 19px;
+}
+
+.adventure-subject {
+  color: #8461d6;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.adventure-content h3 {
+  margin: 8px 0;
+  color: #302653;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.adventure-content p {
+  min-height: 39px;
+  margin: 0;
+  color: #858098;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.adventure-content button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 16px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #7955dc;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+/* LEARNING TRAIL */
+
+.learning-trail-card {
+  display: flex;
+  gap: 24px;
+  padding: 25px;
+  overflow: hidden;
+  border: 1px solid #e9e2ff;
+  border-radius: 25px;
+  background: linear-gradient(115deg, #f3edff, #f1f9ff);
+}
+
+.trail-decoration {
+  display: grid;
+  width: 110px;
+  min-width: 110px;
+  place-items: center;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.65);
+  font-size: 65px;
+}
+
+.trail-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.trail-step {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 10px;
+  border: 0;
+  border-bottom: 1px dashed #dcd3f5;
+  background: transparent;
+  text-align: left;
+  color: #5c4b91;
+}
+
+.trail-step:last-child {
+  border-bottom: 0;
+}
+
+.trail-step-icon {
+  display: grid;
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 13px;
+  background: white;
+  font-size: 20px;
+}
+
+.trail-step-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.trail-step-text strong,
+.trail-step-text small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.trail-step-text strong {
+  color: #40345f;
+  font-size: 13px;
+}
+
+.trail-step-text small {
+  margin-top: 4px;
+  color: #9289a9;
+  font-size: 11px;
+}
+
+.trail-empty {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+.trail-empty > span {
+  font-size: 38px;
+}
+
+.trail-empty strong {
+  color: #40345f;
+}
+
+.trail-empty p {
+  margin: 5px 0 0;
+  color: #858098;
+  font-size: 12px;
+}
+
+/* VIRTUAL LAB */
+
+.explore-lab-banner {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  margin-top: 35px;
+  padding: 26px 30px;
+  border-radius: 25px;
+  background: linear-gradient(110deg, #dff8ed, #e4f5ff);
+}
+
+.lab-banner-art {
+  display: grid;
+  width: 83px;
+  height: 83px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 9px 20px rgba(40, 130, 100, 0.1);
+  font-size: 48px;
+}
+
+.lab-banner-copy {
+  flex: 1;
+}
+
+.lab-banner-copy > span,
+.explore-reward-banner > div > span {
+  color: #399a78;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 1px;
+}
+
+.lab-banner-copy h2 {
+  margin: 6px 0;
+  color: #285c4b;
+  font-size: 21px;
+  font-weight: 900;
+}
+
+.lab-banner-copy p {
+  margin: 0;
+  color: #668a7e;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.explore-lab-banner > button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 17px;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 13px;
+  background: #369b78;
+  color: white;
+  font-size: 12px;
+  font-weight: 850;
+  box-shadow: 0 7px 15px rgba(54, 155, 120, 0.2);
+}
+
+/* REWARD BANNER */
+
+.explore-reward-banner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 22px;
+  padding: 23px 27px;
+  border: 1px solid #f6e6bb;
+  border-radius: 23px;
+  background: linear-gradient(110deg, #fff7df, #fff0e5);
+}
+
+.reward-icon {
+  display: grid;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 18px;
+  background: white;
+  font-size: 33px;
+}
+
+.explore-reward-banner > div:nth-child(2) {
+  flex: 1;
+}
+
+.explore-reward-banner > div > span {
+  color: #c28b2e;
+}
+
+.explore-reward-banner h3 {
+  margin: 5px 0;
+  color: #76542c;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.explore-reward-banner p {
+  margin: 0;
+  color: #a28a68;
+  font-size: 12px;
+}
+
+.reward-stars {
+  font-size: 19px;
+  letter-spacing: 3px;
+}
+
+/* ANIMATIONS */
+
+@keyframes ep-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes ep-wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(12deg);
+  }
+  75% {
+    transform: rotate(-8deg);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .subject-world-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .adventure-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .explore-play {
+    padding-top: 12px;
+  }
+
+  .explore-welcome {
+    padding: 28px 23px;
+    min-height: auto;
+  }
+
+  .welcome-art {
+    width: 150px;
+    min-width: 120px;
+    height: 170px;
+  }
+
+  .explorer-mascot {
+    width: 105px;
+    height: 105px;
+    border-radius: 30px;
+    font-size: 58px;
+  }
+
+  .welcome-orbit {
+    width: 135px;
+    height: 135px;
+  }
+
+  .orbit-two {
+    width: 150px;
+    height: 100px;
+  }
+
+  .mascot-caption {
+    right: -8px;
+    font-size: 10px;
+    padding: 7px 10px;
+  }
+
+  .explore-welcome h1 {
+    font-size: 30px;
+  }
+
+  .explore-welcome p {
+    font-size: 13px;
+  }
+
+  .explore-stats {
+    gap: 9px;
+  }
+
+  .explore-stat-card {
+    gap: 8px;
+    padding: 12px 9px;
+  }
+
+  .stat-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .explore-stat-card strong {
+    font-size: 19px;
+  }
+
+  .explore-stat-card span {
+    font-size: 10px;
+  }
+
+  .explore-lab-banner {
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  .explore-lab-banner > button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .reward-stars {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .explore-welcome {
+    display: block;
+  }
+
+  .welcome-art {
+    width: 100%;
+    height: 175px;
+    margin-top: 15px;
+  }
+
+  .subject-world-grid,
+  .adventure-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .explore-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .explore-section-heading h2 {
+    font-size: 21px;
+  }
+
+  .heading-decoration {
+    font-size: 27px;
+  }
+
+  .learning-trail-card {
+    padding: 13px;
+  }
+
+  .trail-decoration {
+    display: none;
+  }
+
+  .explore-reward-banner {
+    padding: 17px;
+  }
+
+  .explore-reward-banner h3 {
+    font-size: 15px;
+  }
+}

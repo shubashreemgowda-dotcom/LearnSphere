@@ -1,0 +1,841 @@
+
+.physics-lessons-page {
+  min-height: 100vh;
+  padding: 32px;
+  background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 55%, #fff7ed 100%);
+  color: #24324b;
+  font-family: inherit;
+}
+
+.physics-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid #dbeafe;
+  border-radius: 14px;
+  background: white;
+  color: #2563eb;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.physics-back-button:hover {
+  transform: translateX(-3px);
+  box-shadow: 0 5px 15px #2563eb18;
+}
+
+.physics-lesson-header {
+  margin: 28px 0 22px;
+}
+
+.physics-heading-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 12px;
+  border-radius: 18px;
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.physics-eyebrow {
+  color: #6366f1;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.physics-lesson-header h1 {
+  margin: 8px 0;
+  color: #172554;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 850;
+}
+
+.physics-lesson-header p {
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.physics-personal-banner,
+.physics-progress-card,
+.physics-lesson-sidebar,
+.physics-lesson-content {
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 8px 30px #3341550c;
+}
+
+.physics-personal-banner {
+  padding: 20px;
+  margin-bottom: 20px;
+  background: linear-gradient(110deg, #eef2ff, #f0fdfa);
+}
+
+.physics-personal-banner h3 {
+  margin: 0 0 8px;
+  color: #3730a3;
+}
+
+.physics-interest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.physics-interest-tags span {
+  padding: 7px 13px;
+  border-radius: 30px;
+  background: white;
+  color: #4338ca;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.physics-progress-card {
+  padding: 18px 20px;
+  margin-bottom: 24px;
+}
+
+.physics-progress-card p {
+  margin: 0 0 10px;
+  color: #475569;
+  font-weight: 700;
+}
+
+.physics-progress-track {
+  height: 11px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e2e8f0;
+}
+
+.physics-progress-track > div {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #6366f1, #14b8a6);
+  transition: width 0.35s ease;
+}
+
+.physics-learning-layout {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.75fr) minmax(0, 2fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.physics-lesson-sidebar {
+  position: sticky;
+  top: 20px;
+  padding: 18px;
+}
+
+.physics-chapter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 9px;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  background: #f8fafc;
+  color: #475569;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.physics-chapter:hover {
+  background: #eef2ff;
+  border-color: #c7d2fe;
+}
+
+.physics-chapter.active {
+  background: #e0e7ff;
+  border-color: #818cf8;
+  color: #3730a3;
+  font-weight: 800;
+}
+
+.physics-chapter-emoji {
+  font-size: 1.5rem;
+}
+
+.physics-chapter-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.physics-chapter-text small {
+  color: #94a3b8;
+  font-size: 0.72rem;
+}
+
+.physics-done-icon {
+  margin-left: auto;
+  color: #16a34a;
+}
+
+.physics-lesson-content {
+  min-width: 0;
+  padding: clamp(20px, 4vw, 34px);
+}
+
+.physics-topic-banner {
+  padding: 24px;
+  margin-bottom: 24px;
+  border-radius: 20px;
+  background: linear-gradient(120deg, #dbeafe, #ede9fe, #ccfbf1);
+}
+
+.physics-topic-banner h2 {
+  margin: 0 0 8px;
+  color: #1e3a8a;
+  font-size: 1.65rem;
+}
+
+.physics-topic-banner p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.physics-info-section {
+  margin: 24px 0;
+}
+
+.physics-info-section h3,
+.physics-personal-section h3 {
+  margin-bottom: 12px;
+  color: #1e293b;
+  font-size: 1.2rem;
+}
+
+.physics-info-section p {
+  color: #475569;
+  line-height: 1.85;
+}
+
+.physics-concept-box {
+  padding: 18px;
+  margin: 18px 0;
+  border-left: 5px solid #6366f1;
+  border-radius: 12px;
+  background: #eef2ff;
+  color: #3730a3;
+  line-height: 1.7;
+}
+
+.physics-personal-section {
+  padding: 22px;
+  margin: 25px 0;
+  border-radius: 18px;
+  background: #f0fdfa;
+}
+
+.physics-personal-section h3 {
+  color: #0f766e;
+}
+
+.physics-personal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.physics-personal-card {
+  padding: 16px;
+  border: 1px solid #ccfbf1;
+  border-radius: 15px;
+  background: white;
+}
+
+.physics-personal-emoji {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.8rem;
+}
+
+.physics-personal-card p {
+  margin-bottom: 0;
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.physics-explore-box {
+  padding: 20px;
+  margin: 22px 0;
+  border-radius: 17px;
+  background: #fff7ed;
+  color: #9a3412;
+}
+
+.physics-explore-box h3 {
+  margin-top: 0;
+}
+
+.physics-explore-box p {
+  line-height: 1.7;
+}
+
+.physics-quiz-section {
+  padding: 22px;
+  margin-top: 28px;
+  border: 1px solid #ddd6fe;
+  border-radius: 20px;
+  background: #faf5ff;
+}
+
+.physics-quiz-heading {
+  color: #6d28d9;
+  font-weight: 800;
+}
+
+.physics-question {
+  margin: 15px 0;
+  color: #312e81;
+  font-size: 1.08rem;
+  font-weight: 750;
+  line-height: 1.6;
+}
+
+.physics-options {
+  display: grid;
+  gap: 10px;
+}
+
+.physics-option {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid #ddd6fe;
+  border-radius: 13px;
+  background: white;
+  color: #475569;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.physics-option:hover:not(:disabled) {
+  border-color: #8b5cf6;
+  background: #f5f3ff;
+}
+
+.physics-option.selected {
+  border-color: #7c3aed;
+  background: #ede9fe;
+  color: #5b21b6;
+  font-weight: 700;
+}
+
+.physics-option:disabled {
+  cursor: default;
+}
+
+.physics-feedback {
+  padding: 14px;
+  margin-top: 14px;
+  border-radius: 12px;
+  line-height: 1.6;
+}
+
+.physics-feedback.correct {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.physics-feedback.incorrect {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.physics-quiz-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.physics-primary-button,
+.physics-secondary-button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.physics-primary-button {
+  background: linear-gradient(110deg, #4f46e5, #7c3aed);
+  color: white;
+}
+
+.physics-secondary-button {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.physics-primary-button:hover,
+.physics-secondary-button:hover {
+  transform: translateY(-2px);
+}
+
+.physics-primary-button:disabled,
+.physics-secondary-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.physics-finish-message {
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 16px;
+  background: #dcfce7;
+  color: #166534;
+  text-align: center;
+  font-weight: 800;
+}
+
+@media (max-width: 800px) {
+  .physics-lessons-page {
+    padding: 18px;
+  }
+
+  .physics-learning-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .physics-lesson-sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 480px) {
+  .physics-lessons-page {
+    padding: 14px;
+  }
+
+  .physics-lesson-content {
+    padding: 18px;
+  }
+
+  .physics-personal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== PERSONALIZED REWARDS ===== */
+
+.physics-rewards-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 22px 0;
+}
+
+.physics-xp-card {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 18px;
+  border: 1px solid #ddd6fe;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ffffff, #f5f3ff);
+  color: #6d28d9;
+  box-shadow: 0 6px 20px #6366f110;
+}
+
+.physics-xp-card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.physics-xp-card small {
+  color: #64748b;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+}
+
+.physics-xp-card strong {
+  color: #312e81;
+  font-size: 1.3rem;
+}
+
+/* ===== LESSON BADGES ===== */
+
+.physics-sidebar-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 12px;
+  margin-top: 20px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #fef3c7, #ffedd5);
+  color: #92400e;
+  text-align: center;
+}
+
+.physics-sidebar-badge small {
+  color: #a16207;
+  line-height: 1.5;
+}
+
+/* ===== COMPLETED LESSON ===== */
+
+.physics-completed-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px;
+  margin: 15px 0;
+  border-radius: 12px;
+  background: #dcfce7;
+  color: #166534;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* ===== QUIZ PROGRESS ===== */
+
+.physics-question-progress {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 22px 0 10px;
+  color: #6366f1;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.physics-mini-progress {
+  height: 9px;
+  overflow: hidden;
+  margin-bottom: 22px;
+  border-radius: 20px;
+  background: #e2e8f0;
+}
+
+.physics-mini-progress > div {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #6366f1, #14b8a6);
+  transition: width 0.3s ease;
+}
+
+/* ===== HINTS ===== */
+
+.physics-hint-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 14px;
+  margin: 8px 0 14px;
+  border: 1px solid #fcd34d;
+  border-radius: 12px;
+  background: #fffbeb;
+  color: #92400e;
+  font-weight: 750;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.physics-hint-button:hover {
+  background: #fef3c7;
+  transform: translateY(-1px);
+}
+
+.physics-hint-box {
+  padding: 14px 16px;
+  margin-bottom: 15px;
+  border-left: 4px solid #f59e0b;
+  border-radius: 12px;
+  background: #fffbeb;
+  color: #92400e;
+  line-height: 1.65;
+}
+
+/* ===== QUIZ ANSWER STATES ===== */
+
+.physics-option.correct {
+  border-color: #22c55e;
+  background: #dcfce7;
+  color: #166534;
+}
+
+.physics-option.incorrect {
+  border-color: #ef4444;
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.physics-option.correct svg {
+  margin-left: auto;
+}
+
+/* ===== QUIZ RESULTS ===== */
+
+.physics-results-panel {
+  padding: 28px 20px;
+  border: 1px solid #c7d2fe;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #eef2ff, #f5f3ff, #ecfeff);
+  text-align: center;
+}
+
+.physics-results-icon {
+  display: grid;
+  place-items: center;
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.physics-results-panel h3 {
+  margin: 10px 0;
+  color: #312e81;
+  font-size: 1.5rem;
+}
+
+.physics-results-panel > p {
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.physics-results-score {
+  margin: 12px 0;
+  color: #4f46e5 !important;
+  font-size: 2.8rem;
+  font-weight: 900;
+}
+
+.physics-xp-earned {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  margin: 12px 0;
+  border-radius: 30px;
+  background: #fef3c7;
+  color: #92400e;
+  font-weight: 800;
+}
+
+/* ===== PHYSICS MASTER CHALLENGE ===== */
+
+.physics-master-card {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 26px;
+  margin-top: 28px;
+  border: 1px solid #c4b5fd;
+  border-radius: 23px;
+  background: linear-gradient(120deg, #eef2ff, #f5f3ff, #ecfeff);
+  box-shadow: 0 8px 25px #6366f110;
+}
+
+.physics-master-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 65px;
+  height: 65px;
+  border-radius: 20px;
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+.physics-master-copy {
+  flex: 1;
+}
+
+.physics-master-copy > span {
+  color: #7c3aed;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 1.3px;
+}
+
+.physics-master-copy h2 {
+  margin: 7px 0;
+  color: #312e81;
+  font-size: 1.5rem;
+}
+
+.physics-master-copy p {
+  margin: 0 0 9px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.physics-master-copy small {
+  color: #6366f1;
+  font-weight: 750;
+}
+
+.physics-locked-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 15px;
+  border-radius: 12px;
+  background: #e2e8f0;
+  color: #64748b;
+  font-weight: 800;
+}
+
+/* ===== MASTER CHALLENGE WINDOW ===== */
+
+.physics-master-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  padding: 20px;
+  background: #172554b8;
+  backdrop-filter: blur(7px);
+}
+
+.physics-master-window {
+  width: min(100%, 680px);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: clamp(20px, 4vw, 35px);
+  border: 1px solid #c4b5fd;
+  border-radius: 25px;
+  background: white;
+  box-shadow: 0 25px 80px #0f172a55;
+}
+
+.physics-master-close {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.physics-master-title {
+  padding: 22px 0;
+  color: #6d28d9;
+  text-align: center;
+}
+
+.physics-master-title > span {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+}
+
+.physics-master-title h2 {
+  margin: 9px 0;
+  color: #312e81;
+  font-size: 1.8rem;
+}
+
+.physics-master-title p {
+  color: #64748b;
+}
+
+@media (max-width: 750px) {
+  .physics-rewards-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .physics-master-card {
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  .physics-master-card > button,
+  .physics-master-card > .physics-locked-label {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .physics-question-progress {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .physics-master-window {
+    padding: 17px;
+  }
+}
+
+.physics-mission-answer {
+  margin: 20px 0;
+  padding: 22px;
+  border-radius: 18px;
+  background: #f0fdfa;
+  border: 1px solid #99f6e4;
+}
+
+.physics-mission-answer h3 {
+  color: #115e59;
+  margin-bottom: 8px;
+}
+
+.physics-mission-answer p {
+  color: #475569;
+  font-size: 14px;
+}
+
+.physics-mission-answer textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  margin: 12px 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  resize: vertical;
+  font: inherit;
+}
+
+.physics-mission-answer button {
+  padding: 11px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #0d9488;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.physics-mission-answer button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.physics-mission-answer .mission-success {
+  color: #0f766e;
+  font-weight: 700;
+}

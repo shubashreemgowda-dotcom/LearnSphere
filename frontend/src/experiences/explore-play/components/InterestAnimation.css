@@ -1,0 +1,356 @@
+
+.interest-animation-card {
+  margin: 24px 0;
+  padding: 22px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #f0f9ff, #eef2ff, #f5f3ff);
+  border: 1px solid #dbeafe;
+  color: #172554;
+  overflow: hidden;
+}
+
+.interest-animation-heading h3 {
+  font-size: 22px;
+  margin: 10px 0 5px;
+  color: #172554;
+}
+
+.interest-animation-heading p {
+  color: #64748b;
+  font-size: 14px;
+  margin: 0;
+}
+
+.interest-animation-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #4f46e5;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.interest-animation-choices {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  margin: 18px 0;
+}
+
+.interest-animation-choices > span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.interest-animation-choices button {
+  border: 1px solid #cbd5e1;
+  border-radius: 30px;
+  background: white;
+  padding: 8px 13px;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.interest-animation-choices button:hover,
+.interest-animation-choices button.active {
+  background: #4f46e5;
+  border-color: #4f46e5;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.interest-animation-scene {
+  position: relative;
+  height: 260px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #bae6fd 0%, #dbeafe 65%, #bbf7d0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.interest-scene-title {
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  color: #1e3a8a;
+  font-size: 13px;
+  font-weight: 800;
+  z-index: 3;
+}
+
+.interest-scene-sun {
+  position: absolute;
+  right: 35px;
+  top: 28px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fde68a;
+  box-shadow: 0 0 35px #fcd34d;
+}
+
+.interest-scene-cloud {
+  position: absolute;
+  width: 75px;
+  height: 23px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.interest-scene-cloud::before,
+.interest-scene-cloud::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.interest-scene-cloud::before {
+  width: 34px;
+  height: 34px;
+  top: -15px;
+  left: 12px;
+}
+
+.interest-scene-cloud::after {
+  width: 28px;
+  height: 28px;
+  top: -10px;
+  right: 10px;
+}
+
+.cloud-one {
+  top: 75px;
+  left: 15%;
+}
+
+.cloud-two {
+  top: 110px;
+  right: 17%;
+  transform: scale(0.75);
+}
+
+.interest-animated-object {
+  position: relative;
+  z-index: 2;
+  font-size: 76px;
+  filter: drop-shadow(0 12px 8px rgba(30, 41, 59, 0.15));
+  animation: interest-float 2.2s ease-in-out infinite alternate;
+}
+
+.ball {
+  animation: interest-ball 2.5s ease-in-out infinite alternate;
+}
+
+.pencil {
+  animation: interest-pencil 2s ease-in-out infinite alternate;
+}
+
+.seed {
+  animation: interest-grow 2.5s ease-in-out infinite alternate;
+}
+
+.gamer {
+  animation: interest-jump 1.5s ease-in-out infinite;
+}
+
+.rocket {
+  animation: interest-rocket 2.5s ease-in-out infinite alternate;
+}
+
+.note {
+  animation: interest-note 1.8s ease-in-out infinite alternate;
+}
+
+.block {
+  animation: interest-block 2.5s ease-in-out infinite alternate;
+}
+
+.paw {
+  animation: interest-walk 1.5s ease-in-out infinite alternate;
+}
+
+.is-paused .interest-animated-object {
+  animation-play-state: paused;
+}
+
+.interest-scene-ground {
+  position: absolute;
+  bottom: 48px;
+  width: 100%;
+  height: 18px;
+  background: #86c98c;
+  border-radius: 50%;
+}
+
+.interest-scene-ground span {
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  height: 5px;
+  top: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+.interest-scene-caption {
+  position: absolute;
+  bottom: 12px;
+  z-index: 3;
+  color: #1e3a8a;
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+  padding: 0 12px;
+}
+
+.interest-animation-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 0;
+  flex-wrap: wrap;
+}
+
+.interest-animation-controls > span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.interest-animation-controls > div {
+  display: flex;
+  gap: 9px;
+}
+
+.interest-animation-controls button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  border-radius: 10px;
+  background: #4f46e5;
+  color: white;
+  padding: 9px 13px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.interest-animation-controls button:hover {
+  background: #3730a3;
+}
+
+.interest-animation-explanation {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 15px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #dbeafe;
+}
+
+.interest-animation-explanation > span {
+  font-size: 23px;
+}
+
+.interest-animation-explanation strong {
+  display: block;
+  font-size: 14px;
+  color: #312e81;
+  margin-bottom: 5px;
+}
+
+.interest-animation-explanation p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0 0 5px;
+}
+
+.interest-animation-explanation small {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+@keyframes interest-float {
+  from { transform: translateY(-8px); }
+  to { transform: translateY(8px); }
+}
+
+@keyframes interest-ball {
+  from { transform: translate(-55px, 5px) rotate(0deg); }
+  to { transform: translate(55px, -12px) rotate(360deg); }
+}
+
+@keyframes interest-pencil {
+  from { transform: translateX(-30px) rotate(-25deg); }
+  to { transform: translateX(30px) rotate(25deg); }
+}
+
+@keyframes interest-grow {
+  from { transform: scale(0.65) translateY(20px); }
+  to { transform: scale(1.15) translateY(-10px); }
+}
+
+@keyframes interest-jump {
+  0%, 100% { transform: translateY(8px); }
+  50% { transform: translateY(-38px); }
+}
+
+@keyframes interest-rocket {
+  from { transform: translate(-12px, 15px) rotate(-12deg); }
+  to { transform: translate(15px, -35px) rotate(12deg); }
+}
+
+@keyframes interest-note {
+  from { transform: translateY(12px) rotate(-12deg); }
+  to { transform: translateY(-22px) rotate(12deg); }
+}
+
+@keyframes interest-block {
+  from { transform: translateX(-35px); }
+  to { transform: translateX(35px); }
+}
+
+@keyframes interest-walk {
+  from { transform: translateX(-20px); }
+  to { transform: translateX(20px); }
+}
+
+@media (max-width: 600px) {
+  .interest-animation-card {
+    padding: 14px;
+  }
+
+  .interest-animation-scene {
+    height: 220px;
+  }
+
+  .interest-animated-object {
+    font-size: 62px;
+  }
+
+  .interest-animation-controls {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interest-animated-object {
+    animation: none !important;
+  }
+}
