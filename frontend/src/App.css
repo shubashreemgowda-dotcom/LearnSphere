@@ -885,3 +885,52 @@ button:disabled {
     padding: 18px;
   }
 }
+
+
+/* Visual mission studio */
+.mission-studio{width:min(1120px,calc(100% - 36px));margin:24px auto 70px;color:#f8fafc}
+.mission-topline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#93e7ff;font-size:.78rem;font-weight:800;letter-spacing:.12em;margin:0 0 18px}
+.mission-visual-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.85fr);gap:18px}
+.mission-visual-card,.mission-explain-card,.mission-quiz-card{background:linear-gradient(145deg,rgba(37,45,78,.96),rgba(25,32,58,.98));border:1px solid rgba(148,163,184,.24);border-radius:22px;padding:24px;box-shadow:0 16px 45px rgba(0,0,0,.14)}
+.mission-card-heading{display:flex;justify-content:space-between;align-items:center}
+.mission-card-heading small,.mission-explain-card>small,.mission-quiz-card small{color:#67e8f9;font-weight:800;letter-spacing:.13em;font-size:.7rem}
+.mission-card-heading h2,.mission-explain-card h2,.mission-quiz-card h2{font-size:1.45rem;margin:8px 0 16px}
+.mission-emoji{font-size:2rem;background:rgba(99,102,241,.18);border-radius:16px;padding:12px}
+.mission-svg{width:100%;max-height:240px;overflow:visible;margin:8px 0}
+.mission-slider-row{display:flex;justify-content:space-between;align-items:center;margin-top:6px;color:#cbd5e1}
+.mission-slider-row strong{color:#a5f3fc;font-size:1.1rem}
+.mission-range{width:100%;accent-color:#8b5cf6;margin:14px 0}
+.mission-result{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-radius:14px;background:rgba(34,197,94,.12);border:1px solid rgba(74,222,128,.25)}
+.mission-result strong{font-size:1.5rem;color:#86efac}
+.mission-explain-card p,.mission-quiz-card p{color:#cbd5e1;line-height:1.7}
+.mission-formula{padding:18px;border-radius:15px;background:rgba(99,102,241,.18);border:1px solid rgba(129,140,248,.3);font-weight:800;text-align:center;margin:22px 0}
+.mission-explain-card h3{margin:20px 0 4px}
+.mission-tip{display:flex;gap:10px;background:rgba(14,165,233,.1);padding:14px;border-radius:13px;color:#bae6fd;line-height:1.5;margin-top:22px}
+.mission-concept-graphic{min-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:12px}
+.graphic-caption{color:#cbd5e1;text-align:center;max-width:360px;line-height:1.5}
+.physics-track{height:75px;width:100%;border-bottom:4px solid #64748b;position:relative;display:flex;align-items:center}
+.physics-ball{font-size:42px;color:#38bdf8;animation:ballTravel 2.6s ease-in-out infinite alternate}
+.force-arrow{margin-left:auto;color:#fbbf24;font-weight:800}
+@keyframes ballTravel{from{transform:translateX(10px)}to{transform:translateX(180px)}}
+.mini-bars{height:78px;display:flex;align-items:end;gap:12px}
+.mini-bars i{display:block;width:25px;border-radius:7px 7px 2px 2px;background:linear-gradient(#67e8f9,#6366f1);min-height:12px}
+.ph-scale{display:flex;align-items:center;gap:5px;flex-wrap:wrap;justify-content:center}
+.ph-scale i{width:27px;height:28px;border-radius:6px}
+.ph-scale span{font-size:.65rem;font-weight:900;color:#cbd5e1}
+.ph-meter{border:1px solid rgba(167,139,250,.4);background:rgba(139,92,246,.13);border-radius:18px;padding:12px 28px;text-align:center;font-size:1.2rem}
+.ph-meter b{font-size:2.2rem;color:#c4b5fd;margin:0 10px}.ph-meter small{display:block;color:#cbd5e1}
+.plant-art{height:145px;width:170px;position:relative;display:flex;justify-content:center;border-bottom:15px solid #a16207;border-radius:0 0 50% 50%}
+.plant-stem{position:absolute;bottom:12px;width:8px;height:105px;background:#22c55e;border-radius:10px}
+.plant-leaf{position:absolute;width:55px;height:28px;background:#4ade80;border-radius:100% 0 100% 0;bottom:75px}
+.leaf-a{left:32px;transform:rotate(18deg)}.leaf-b{right:27px;transform:scaleX(-1) rotate(18deg);bottom:95px}
+.plant-flower{position:absolute;top:0;font-size:35px;color:#f9a8d4}.plant-roots{position:absolute;bottom:-17px;color:#fbbf24;font-size:32px}
+.mission-quiz-card{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px 25px;align-items:center}
+.mission-quiz-card h2{margin-bottom:6px}.mission-options{display:grid;grid-template-columns:1fr;gap:9px}
+.mission-options button{border:1px solid rgba(148,163,184,.35);background:rgba(15,23,42,.55);color:#f8fafc;padding:12px 15px;border-radius:12px;text-align:left;cursor:pointer;font-weight:700}
+.mission-options button:hover{border-color:#a5b4fc;background:rgba(99,102,241,.18)}
+.mission-options button.is-correct{border-color:#4ade80;background:rgba(34,197,94,.18)}
+.mission-options button.is-wrong{border-color:#fb7185;background:rgba(244,63,94,.14)}
+.quiz-feedback{grid-column:1/-1;margin:0!important;color:#fda4af!important;font-weight:700}
+.quiz-feedback.good{color:#86efac!important}
+.mission-complete{margin-top:18px}
+@media(max-width:760px){.mission-visual-grid{grid-template-columns:1fr}.mission-quiz-card{grid-template-columns:1fr}.mission-studio{width:calc(100% - 24px)}.mission-visual-card,.mission-explain-card,.mission-quiz-card{padding:18px}}

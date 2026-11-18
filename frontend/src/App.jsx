@@ -11,7 +11,9 @@ import "./App.css";
 import ExplorePlay from "./experiences/explore-play/ExplorePlay";
 import DiscoverInnovate from "./experiences/discover-innovate/DiscoverInnovate";
 import SubjectExplore from "./experiences/explore-play/components/SubjectExplore";
-import PhysicsLessons from "./experiences/explore-play/components/PhysicsLessons";
+import TopicLearning from "./experiences/explore-play/components/TopicLearning";
+import ExperimentDetail from "./experiences/virtual-lab/ExperimentDetail";
+import PerformanceReport from "./components/performance-report/PerformanceReport";
 
 const interests = [
   { name: "Football", emoji: "⚽", description: "Sports and movement" },
@@ -20,7 +22,7 @@ const interests = [
   { name: "Gaming", emoji: "🎮", description: "Games and technology" },
   { name: "Space", emoji: "🚀", description: "The universe" },
   { name: "Music", emoji: "🎵", description: "Sound and rhythm" },
-  { name: "Building", emoji: "🏗️", description: "Design and structures" },
+  { name: "Building", emoji: "🛠️", description: "Design and structures" },
   { name: "Animals", emoji: "🐾", description: "Living organisms" },
 ];
 
@@ -89,7 +91,7 @@ const laboratories = [
         explanation: "When a pendulum is displaced and released, gravity pulls it towards its resting position. This produces repeated oscillations.",
         observation: "Changing the length of a pendulum changes its time period. A longer pendulum generally takes more time to complete one oscillation.",
         realWorld: "Pendulum clocks, scientific instruments and measurements of time.",
-        emoji: "⏱️",
+        emoji: "â±ï¸",
         fact: "The time period depends mainly on the pendulum's length and the strength of gravity."
       },
       {
@@ -99,7 +101,7 @@ const laboratories = [
         explanation: "An object can accelerate when an unbalanced force acts on it. Its acceleration depends on the net force and its mass.",
         observation: "Increasing the applied force increases acceleration when mass stays constant.",
         realWorld: "Sports, vehicle movement, rockets and everyday activities.",
-        emoji: "🏀",
+        emoji: "ðŸ€",
         fact: "Newton's second law is represented by F = ma."
       }
     ]
@@ -111,13 +113,13 @@ const laboratories = [
     description: "Explore reactions and materials.",
     experiments: [
       {
-        title: "Acid–Base Indicators",
+        title: "Acidâ€“Base Indicators",
         description: "Explore colour-changing indicators.",
         concept: "Indicators are substances that change colour depending on whether a solution is acidic or basic.",
         explanation: "Different indicators respond to different pH conditions. For example, red cabbage extract contains pigments that change colour in acidic and basic solutions.",
         observation: "The colour of an indicator changes depending on the solution being tested.",
         realWorld: "Laboratories, water testing, soil testing and chemistry experiments.",
-        emoji: "🧪",
+        emoji: "ðŸ§ª",
         fact: "The pH scale commonly ranges from 0 to 14."
       },
       {
@@ -127,7 +129,7 @@ const laboratories = [
         explanation: "Filtration, evaporation, sedimentation and sieving are methods used to separate mixtures based on differences in physical properties.",
         observation: "Different mixtures require different separation methods.",
         realWorld: "Water purification, food processing and recycling.",
-        emoji: "⚗️",
+        emoji: "âš—ï¸",
         fact: "Filtration separates insoluble solids from liquids."
       }
     ]
@@ -145,7 +147,7 @@ const laboratories = [
         explanation: "Plant cells contain structures such as the cell wall, cell membrane, nucleus, cytoplasm, vacuole and chloroplasts.",
         observation: "Each cell structure has a specific function that helps the plant survive.",
         realWorld: "Agriculture, plant growth, biotechnology and life sciences.",
-        emoji: "🌿",
+        emoji: "ðŸŒ¿",
         fact: "Chloroplasts contain chlorophyll, which absorbs light energy."
       },
       {
@@ -155,7 +157,7 @@ const laboratories = [
         explanation: "Plants use carbon dioxide and water, with light energy, to produce glucose and release oxygen.",
         observation: "Light, water and carbon dioxide are important factors in photosynthesis.",
         realWorld: "Agriculture, ecosystems, food chains and the oxygen cycle.",
-        emoji: "☀️",
+        emoji: "â˜€ï¸",
         fact: "Photosynthesis converts light energy into chemical energy."
       }
     ]
@@ -173,7 +175,7 @@ const laboratories = [
         explanation: "Solids such as cubes, spheres, cones and cylinders have different faces, edges, vertices and curved surfaces.",
         observation: "Rotating a 3D shape helps us understand its structure from different angles.",
         realWorld: "Architecture, product design, engineering and construction.",
-        emoji: "🔷",
+        emoji: "ðŸ”·",
         fact: "A cube has six square faces, twelve edges and eight vertices."
       },
       {
@@ -183,7 +185,7 @@ const laboratories = [
         explanation: "A point on a two-dimensional plane is represented by an ordered pair (x, y), measured from the horizontal and vertical axes.",
         observation: "Changing either coordinate moves a point horizontally or vertically.",
         realWorld: "Maps, navigation, computer graphics and engineering drawings.",
-        emoji: "📈",
+        emoji: "ðŸ“ˆ",
         fact: "The origin of the Cartesian plane is (0, 0)."
       }
     ]
@@ -227,7 +229,7 @@ function ExperimentAnimation({ experiment }) {
           background: "rgba(34,197,94,0.15)",
           color: "#86efac"
         }}>
-          ● SIMULATION
+          â— SIMULATION
         </span>
       </div>
 
@@ -307,7 +309,7 @@ function ExperimentAnimation({ experiment }) {
                 fontSize: "55px"
               }}
             >
-              🏀
+              ðŸ€
             </motion.div>
             <div style={{
               position: "absolute",
@@ -316,7 +318,7 @@ function ExperimentAnimation({ experiment }) {
               color: "#93c5fd",
               fontSize: "13px"
             }}>
-              Applied force → Motion
+              Applied force â†’ Motion
             </div>
           </div>
         )}
@@ -403,14 +405,14 @@ function ExperimentAnimation({ experiment }) {
               transition={{ duration: 3, repeat: playing ? Infinity : 0 }}
               style={{ fontSize: "95px" }}
             >
-              🌱
+              ðŸŒ±
             </motion.div>
             <motion.div
               animate={playing ? { y: [-10, 10, -10], opacity: [0.4, 1, 0.4] } : { opacity: 1 }}
               transition={{ duration: 2, repeat: playing ? Infinity : 0 }}
               style={{ fontSize: "25px" }}
             >
-              ☀️
+              â˜€ï¸
             </motion.div>
             <span style={{ color: "#86efac", fontSize: "13px" }}>
               Light + Water + Carbon dioxide
@@ -529,6 +531,78 @@ function ExperimentAnimation({ experiment }) {
   );
 }
 
+
+function MissionStudio({ item, interest, onComplete }) {
+  const [measure, setMeasure] = useState(8);
+  const [choice, setChoice] = useState("");
+  const subject = item.subject;
+  const palette = {
+    Physics: ["#38bdf8", "#6366f1"],
+    Chemistry: ["#a78bfa", "#ec4899"],
+    Biology: ["#4ade80", "#14b8a6"],
+    Mathematics: ["#fbbf24", "#f97316"],
+  }[subject] || ["#818cf8", "#38bdf8"];
+  const area = measure * 5;
+  const question = subject === "Mathematics" ? "A garden is 8 m long and 5 m wide. What is its area?" :
+    subject === "Physics" ? "What happens to an object's speed when a constant force acts in the direction of motion?" :
+    subject === "Chemistry" ? "Which soil property helps determine whether it is acidic or alkaline?" :
+    "Which plant part mainly absorbs water from the soil?";
+  const options = subject === "Mathematics" ? [["13 mÂ²","13"],["40 mÂ²","40"],["80 mÂ²","80"]] :
+    subject === "Physics" ? [["It can accelerate","yes"],["It disappears","no"],["Its mass becomes zero","no"]] :
+    subject === "Chemistry" ? [["Soil pH","yes"],["Leaf shape","no"],["Sunlight colour","no"]] :
+    [["Roots","yes"],["Flowers","no"],["Fruits","no"]];
+  const correctValue = subject === "Mathematics" ? "40" : "yes";
+  const visualTitle = subject === "Mathematics" ? "Garden area visualiser" :
+    subject === "Physics" ? "Motion & force explorer" :
+    subject === "Chemistry" ? "Soil science visualiser" : "Plant growth explorer";
+  return (
+    <div className="mission-studio">
+      <div className="mission-topline">
+        <span>ðŸŒŸ {interest} â†’ {subject}</span><span>MISSION {item.step || "01"} Â· 3 ACTIVITIES</span>
+      </div>
+      <div className="mission-visual-grid">
+        <div className="mission-visual-card">
+          <div className="mission-card-heading"><div><small>VISUAL EXPLORATION</small><h2>{visualTitle}</h2></div><span className="mission-emoji">{subject === "Mathematics" ? "ðŸ“" : subject === "Physics" ? "âš¡" : subject === "Chemistry" ? "ðŸ§ª" : "ðŸŒ¿"}</span></div>
+          {subject === "Mathematics" ? (
+            <>
+              <svg viewBox="0 0 420 210" className="mission-svg" role="img" aria-label="Rectangular garden measurement diagram">
+                <defs><linearGradient id="gardenFill" x1="0" x2="1"><stop offset="0%" stopColor={palette[0]} stopOpacity=".28"/><stop offset="100%" stopColor={palette[1]} stopOpacity=".18"/></linearGradient></defs>
+                <rect x="92" y="28" width="250" height="135" rx="9" fill="url(#gardenFill)" stroke={palette[0]} strokeWidth="3"/>
+                {[1,2,3,4].map(n=><path key={n} d={`M ${92+n*50} 28 V 163`} stroke={palette[0]} opacity=".28" strokeDasharray="4 5"/>)}
+                {[1,2].map(n=><path key={n} d={`M 92 ${28+n*45} H 342`} stroke={palette[0]} opacity=".28" strokeDasharray="4 5"/>)}
+                {[0,1,2,3,4,5,6,7,8,9,10,11].map(n=><circle key={n} cx={112+(n%4)*68} cy={49+Math.floor(n/4)*48} r="7" fill={n%2?palette[1]:palette[0]}/>)}
+                <path d="M92 181 H342 M92 174 V188 M342 174 V188" stroke="currentColor" strokeWidth="1.5"/><text x="217" y="202" fill="currentColor" fontSize="12" textAnchor="middle">Length: {measure} metres</text>
+                <text x="76" y="98" fill="currentColor" fontSize="12" textAnchor="middle" transform="rotate(-90 76 98)">Width: 5 m</text>
+              </svg>
+              <div className="mission-slider-row"><label>Adjust garden length</label><strong>{measure} m</strong></div>
+              <input className="mission-range" type="range" min="2" max="15" value={measure} onChange={e=>setMeasure(Number(e.target.value))}/>
+              <div className="mission-result"><span>Calculated garden area</span><strong>{area} mÂ²</strong></div>
+            </>
+          ) : (
+            <div className="mission-concept-graphic">
+              {subject === "Physics" ? <><div className="physics-track"><span className="physics-ball">â—</span><span className="force-arrow">â†’ Force</span></div><div className="graphic-caption">A push or pull can change an object's motion.</div><div className="mini-bars"><i style={{height:"25%"}}/><i style={{height:"43%"}}/><i style={{height:"68%"}}/><i style={{height:"92%"}}/></div><small>Illustrative speed over time</small></> :
+              subject === "Chemistry" ? <><div className="ph-scale"><span>ACIDIC</span>{["#ef4444","#f97316","#facc15","#84cc16","#22c55e","#0d9488","#3b82f6"].map(c=><i key={c} style={{background:c}}/>)}<span>ALKALINE</span></div><div className="graphic-caption">Soil pH helps describe how acidic or alkaline soil is.</div><div className="ph-meter">pH <b>6.5</b><small>Example soil reading</small></div></> :
+              <><div className="plant-art"><div className="plant-stem"/><div className="plant-leaf leaf-a"/><div className="plant-leaf leaf-b"/><div className="plant-flower">âœ¿</div><div className="plant-roots">â•±â”‚â•²</div></div><div className="graphic-caption">Roots absorb water and minerals that help a plant grow.</div><div className="mini-bars"><i style={{height:"35%"}}/><i style={{height:"55%"}}/><i style={{height:"76%"}}/><i style={{height:"95%"}}/></div><small>Illustrative plant growth stages</small></>}
+            </div>
+          )}
+        </div>
+        <div className="mission-explain-card">
+          <small>DISCOVER THE IDEA</small><h2>{item.topic}</h2><p>{item.detail}</p>
+          <div className="mission-formula">{subject === "Mathematics" ? "Area = Length Ã— Width" : subject === "Physics" ? "Force â†’ Change in motion" : subject === "Chemistry" ? "pH â†’ Soil condition" : "Roots â†’ Water + minerals"}</div>
+          <h3>ðŸŽ¯ Your mission</h3><p>{item.mission}</p>
+          <div className="mission-tip">ðŸ’¡ <span>Explore the visual, change the values and notice how the result changes.</span></div>
+        </div>
+      </div>
+      <div className="mission-quiz-card">
+        <div><small>QUICK KNOWLEDGE CHECK</small><h2>Test your discovery</h2><p>{question}</p></div>
+        <div className="mission-options">{options.map(([label,value])=><button key={value} className={choice===value?(value===correctValue?"is-correct":"is-wrong"):""} onClick={()=>setChoice(value)}>{label}</button>)}</div>
+        {choice && <p className={choice===correctValue?"quiz-feedback good":"quiz-feedback"}>{choice===correctValue?"âœ“ Correct! Great discovery.":"Not quite â€” try another answer."}</p>}
+      </div>
+      <button className="primary-button mission-complete" onClick={onComplete}>Mark mission as completed <Trophy size={18}/></button>
+    </div>
+  );
+}
+
 export default function App() {
   const [page, setPage] = useState("home");
   const [studentClass, setStudentClass] = useState("");
@@ -573,6 +647,7 @@ export default function App() {
         <div className="nav-links">
           <a href="#subjects" onClick={() => setPage("home")}>STEM Universe</a>
           <a href="#discover" onClick={() => setPage("home")}>Discover</a>
+          <a href="#report" onClick={(e) => { e.preventDefault(); setPage("report"); }}>Performance Report</a>
         </div>
         <span className="nav-label">DISCOVER STEM IN EVERYTHING</span>
       </nav>
@@ -594,7 +669,7 @@ export default function App() {
                   Begin Your Journey <Rocket size={18} />
                 </button>
                 <div className="hero-note">
-                  <BookOpen size={18} /> Designed for curious minds in Classes 6–10
+                  <BookOpen size={18} /> Designed for curious minds in Classes 6â€“10
                 </div>
               </div>
 
@@ -701,7 +776,7 @@ export default function App() {
                   >
                     <span>{item.emoji}</span>
                     <span>{item.name}</span>
-                    {selectedInterests.includes(item.name) && <span>✓</span>}
+                    {selectedInterests.includes(item.name) && <span>âœ“</span>}
                   </button>
                 ))}
               </div>
@@ -777,21 +852,26 @@ export default function App() {
               setActiveSubject(null);
               setPage("dashboard");
             }}
+            selectedInterests={selectedInterests}
             onOpenTopic={(subject, topic) => {
+              setActiveSubject(subject);
               setActiveTopic(topic);
-              if (subject === "Physics") {
-                setPage("physicsLessons");
-              }
+              setPage("topicLearning");
             }}
           />
         )}
 
-        {page === "physicsLessons" && activeTopic && (
-          <PhysicsLessons
+        {(page === "topicLearning" || page === "physicsLessons") && activeTopic && (
+          <TopicLearning
+            subject={activeSubject || "STEM"}
             topic={activeTopic}
             studentClass={studentClass}
             selectedInterests={selectedInterests}
             onBack={() => setPage("subject")}
+            onOpenLabs={() => {
+              setActiveExperiment(null);
+              setPage("labs");
+            }}
           />
         )}
 
@@ -806,30 +886,18 @@ export default function App() {
               <ArrowLeft size={17} /> Back to dashboard
             </button>
 
-            <div className="lesson-card">
-              {learningPath[activeJourney] ? (
-                <>
-                  <div className="eyebrow"><BookOpen size={17} /> YOUR LEARNING JOURNEY</div>
-                  <h1>{learningPath[activeJourney].topic}</h1>
-                  <p>{learningPath[activeJourney].detail}</p>
-                  <h3>Your mission</h3>
-                  <p>{learningPath[activeJourney].mission}</p>
-                  <button
-                    className="primary-button"
-                    onClick={() => {
-                      setCompleted((old) =>
-                        old.includes(activeJourney) ? old : [...old, activeJourney]
-                      );
-                      setPage("dashboard");
-                    }}
-                  >
-                    Mark as completed <Trophy size={18} />
-                  </button>
-                </>
-              ) : (
-                <p>This learning activity is not available yet.</p>
-              )}
-            </div>
+            {learningPath[activeJourney] ? (
+              <MissionStudio
+                item={learningPath[activeJourney]}
+                interest={selectedInterests[0] || "Your interest"}
+                onComplete={() => {
+                  setCompleted((old) => old.includes(activeJourney) ? old : [...old, activeJourney]);
+                  setPage("dashboard");
+                }}
+              />
+            ) : (
+              <div className="lesson-card"><h2>Mission coming soon</h2><p>Choose another discovery mission from your learning trail.</p></div>
+            )}
           </motion.section>
         )}
 
@@ -975,88 +1043,30 @@ export default function App() {
                 </div>
               </div>
             ) : (
-              <motion.div
-                key={activeExperiment.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="lesson-card"
-              >
-                <div className="eyebrow">
-                  <Microscope size={17} /> {activeExperiment.subject.toUpperCase()} LABORATORY
-                </div>
-
-                <h1>{activeExperiment.emoji} {activeExperiment.title}</h1>
-                <p>{activeExperiment.description}</p>
-
-                <div style={{
-                  margin: "25px 0",
-                  padding: "18px",
-                  borderRadius: "15px",
-                  background: "rgba(99,102,241,0.12)",
-                  border: "1px solid rgba(129,140,248,0.25)"
-                }}>
-                  <h3><Lightbulb size={19} /> What will you discover?</h3>
-                  <p>{activeExperiment.concept}</p>
-                </div>
-
-                <h2>Explore the animated experiment</h2>
-                <ExperimentAnimation experiment={activeExperiment} />
-
-                <div style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-                  gap: "16px",
-                  marginTop: "25px"
-                }}>
-                  <div style={{
-                    padding: "20px",
-                    borderRadius: "15px",
-                    background: "rgba(59,130,246,0.10)"
-                  }}>
-                    <h3>📖 How does it work?</h3>
-                    <p>{activeExperiment.explanation}</p>
-                  </div>
-
-                  <div style={{
-                    padding: "20px",
-                    borderRadius: "15px",
-                    background: "rgba(34,197,94,0.10)"
-                  }}>
-                    <h3>🔍 What should you observe?</h3>
-                    <p>{activeExperiment.observation}</p>
-                  </div>
-
-                  <div style={{
-                    padding: "20px",
-                    borderRadius: "15px",
-                    background: "rgba(168,85,247,0.10)"
-                  }}>
-                    <h3>🌍 Real-world applications</h3>
-                    <p>{activeExperiment.realWorld}</p>
-                  </div>
-
-                  <div style={{
-                    padding: "20px",
-                    borderRadius: "15px",
-                    background: "rgba(236,72,153,0.10)"
-                  }}>
-                    <h3>⭐ Did you know?</h3>
-                    <p>{activeExperiment.fact}</p>
-                  </div>
-                </div>
-
-                <button
-                  className="primary-button"
-                  style={{ marginTop: "25px" }}
-                  onClick={() => setActiveExperiment(null)}
-                >
-                  Explore another experiment <ChevronRight size={18} />
-                </button>
-              </motion.div>
+              <ExperimentDetail
+                experiment={activeExperiment}
+                onBack={() => setActiveExperiment(null)}
+              />
             )}
           </motion.section>
         )}
-      </AnimatePresence>
+              {page === "report" && (
+          <motion.section
+            key="report"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+          >
+            <PerformanceReport
+              studentClass={studentClass}
+              selectedInterests={selectedInterests}
+              completed={completed}
+              learningPath={learningPath}
+            />
+          </motion.section>
+        )}
+</AnimatePresence>
     </main>
   );
 }
+

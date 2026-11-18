@@ -226,7 +226,10 @@ function ExplorePlay({
 
               <button
                 className="world-explore-button"
-                onClick={() => onOpenLesson?.(index)}
+                onClick={() => {
+                  const lessonIndex = safePath.findIndex((lesson) => lesson?.subject === subject.name);
+                  if (lessonIndex >= 0) onOpenLesson?.(lessonIndex);
+                }}
               >
                 Explore world <ChevronRight size={16} />
               </button>
@@ -262,7 +265,10 @@ function ExplorePlay({
                 <span className="adventure-subject">{adventure.subject}</span>
                 <h3>{adventure.title}</h3>
                 <p>{adventure.description}</p>
-                <button onClick={() => onOpenLesson?.(index)}>
+                <button onClick={() => {
+                  const lessonIndex = safePath.findIndex((lesson) => lesson?.subject === adventure.subject);
+                  if (lessonIndex >= 0) onOpenLesson?.(lessonIndex);
+                }}>
                   Begin mission <ArrowRightFallback />
                 </button>
               </div>
